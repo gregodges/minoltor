@@ -7,7 +7,7 @@
   src: url('./assets/font/D-DIN-Bold.otf');
 }
 :root {
-  --bg-color: #CBB8A8;
+  --bg-color: #e3d0c1;
   --black: rgb(30, 27, 27);
   --taille-texte: 16px;
 }
@@ -38,13 +38,13 @@ svg{
   position: relative;
   width: 100%;
   min-height: 100dvh;
-  border: 1px solid red;
+
 }
 .home-image{
   position: absolute;
-  bottom: 0;
+  bottom: 50px;
   right: 0;
-  width: 500px;
+  width: 450px;
   height: auto;
 }
 .navbar{
@@ -120,6 +120,12 @@ svg{
 }
 .section-cards{
   position: relative;
+  min-height: 100dvh;
+}
+.cards-wrap{
+  position: absolute;
+  width: 100%;
+  top: -20px;
   display: flex;
   justify-content: space-evenly;
 
@@ -131,9 +137,11 @@ svg{
     }
 }
 .card{
+  position: relative;
   width: 45%;
   padding: 40px;
   min-height: 400px;
+  max-height: 80dvh;
   border-radius: 2rem;
   transition: border-radius 0.4s ease-in-out;
   background-color: var(--black);
@@ -148,6 +156,19 @@ svg{
 .card:first-child{
   background-color: transparent;
   border: 1px solid var(--black);
+  padding: 0;
+  overflow: hidden;
+}
+.card-photo{
+  display: block;
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 2s ease-in-out;
+}
+.card-photo:hover{
+  transform: scale(1.05);
 }
 .text{
   font-size: 3rem;
