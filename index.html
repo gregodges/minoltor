@@ -8,8 +8,9 @@
 </head>
 <body>
   <header id="home" class="section-home">
-<img class="home-image" src="assets/images/minoltor-illustration.png" alt="">
-    <nav class="navbar">
+<img class="home-image"  src="assets/images/minoltor-illustration.png" alt="">
+    <nav   class="navbar">
+      <a tabindex="2" href="#home">
       <svg class="logo-small" width="616" height="134" viewBox="0 0 616 134" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_2_2)">
           <path d="M140.753 3.67503C129.432 3.65907 118.12 3.64311 106.809 3.67503C106.379 3.67503 105.779 4.05804 105.599 4.3852C104.808 5.81352 67.8336 81.6182 67.8336 81.6182L66.8235 81.6501C66.8235 81.6501 71.6341 5.94918 71.7141 3.70695H35.3694C23.5279 46.6204 11.7063 89.4779 -0.125244 132.343C-0.0852389 132.351 0.0147699 132.407 0.104782 132.407C8.08582 132.415 25.068 132.439 25.068 132.439C27.0783 124.587 49.1312 35.0661 49.1312 35.0661H50.2713L45.2907 132.391H57.5823L105.889 35.0582H107.149C107.149 35.0582 77.975 131.019 77.5449 132.367H105.469C117.31 89.4221 129.122 46.5805 140.933 3.75483C140.843 3.71493 140.793 3.68302 140.743 3.68302L140.753 3.67503Z" fill="black"/>
@@ -28,14 +29,15 @@
           </clipPath>
         </defs>
       </svg>
-
+    </a>
       <ul class="list">
-        <li class="item"><a href="">Maison</a></li>
-        <li class="item"><a href="">Contact</a></li>
-        <li class="item"><a href="">Insta</a></li>
+        <li class="item"><a tabindex="3" href="#contact">Contact</a></li>
+        <li class="item"><a tabindex="4" href="#faq">FAQ</a></li>
+        <li class="item"><a tabindex="5" href="">Insta</a></li>
       </ul>
     </nav>
     <div class="title-wrap">
+
       <svg class="title" width="616" height="134" viewBox="0 0 616 134" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_2_2)">
           <path d="M140.753 3.67503C129.432 3.65907 118.12 3.64311 106.809 3.67503C106.379 3.67503 105.779 4.05804 105.599 4.3852C104.808 5.81352 67.8336 81.6182 67.8336 81.6182L66.8235 81.6501C66.8235 81.6501 71.6341 5.94918 71.7141 3.70695H35.3694C23.5279 46.6204 11.7063 89.4779 -0.125244 132.343C-0.0852389 132.351 0.0147699 132.407 0.104782 132.407C8.08582 132.415 25.068 132.439 25.068 132.439C27.0783 124.587 49.1312 35.0661 49.1312 35.0661H50.2713L45.2907 132.391H57.5823L105.889 35.0582H107.149C107.149 35.0582 77.975 131.019 77.5449 132.367H105.469C117.31 89.4221 129.122 46.5805 140.933 3.75483C140.843 3.71493 140.793 3.68302 140.743 3.68302L140.753 3.67503Z" fill="currentColor"/>
@@ -56,26 +58,93 @@
       </svg>
       <div class="subtitle-wrap">
 
-        <h2 class="subtitle">Réparation et entretien d'appareils photo <span class="bold">argentiques</span></h2>
+        <h3  class="subtitle">Réparation et entretien d'appareils photo <span class="bold">argentiques</span></h3>
         <!-- <h2 class="subtitle"><span class="bold">Julien Mathé</span> vous sors du dédale de la panne</h2> -->
       </div>
     </div>
-  </header>
-  <main id="main">
 
-    <div class="section-cards">
+  </header>
+  <main id="main" >
+
+    <section class="section-cards">
       <div class="cards-wrap">
-      <div class="card"><img class="card-photo" src="assets/images/photo.JPG" alt=""></div>
+      <div class="card">
+        <img src="assets/images/photo-test.jpg" class="photo-card"  alt="">
+      </div>
       <div class="card"><p class="text"> <span class="bold">Minoltor</span>, c'est l'atelier de réparation et d'entretien de matériel argentique de <span class="bold">Julien Mathé</span>, basé à <span class="bold">Rezé</span></p>
          <p class="text">
 Passionné par les appareils photo argentiques depuis quelques années, la réparation est rapidement apparue comme une étape de plus pour se plonger dans ce monde captivant. Grâce à l'aide de nombreuse personnes expertes sur des forums et à diverses documentations, Julien a pu acquerir des compétences qui lui permettent aujourd'hui de mettre ses services à disposition de personne qui souhaitent redonner une seconde vie à leurs boitiers.
       </p>
     </div>
+  </section>
+</main>
+<section id="faq" class="section-faq">
+  <h2 class="section-title">faq</h2>
+  <div class="faq-wrap">
+    <div tabindex="6" id="1" class="faq-item">
+      <div class="question">
+        <h5 class="label">Comment ça va toi sinon ? </h5>
+        <span class="plus-icon">+</span>
+      </div>
+      <div  class="reponse-block">
+        <span class="content">
+          <p class="reponse">Ça va bien merci. i 1</p>
+        </span>
+      </div>
+    </div>
+    <div id="2" tabindex="6" class="faq-item">
+      <div class="question">
+        <h5 class="label">Comment ça va toi sinon ? </h5>
+        <span class="plus-icon">+</span>
+
+      </div>
+      <div  class="reponse-block">
+        <span class="content">
+          <p class="reponse">Ça va bien merci i 2.</p>
+        </span>
+      </div>
+    </div>
+    <div id="3" tabindex="6" class="faq-item">
+      <div class="question">
+        <h5 class="label">Comment ça va toi sinon ? </h5>
+        <span class="plus-icon">+</span>
+
+      </div>
+      <div  class="reponse-block">
+        <span class="content">
+          <p class="reponse">Ça va bien merci i 2.</p>
+        </span>
+      </div>
+    </div>
+    <div id="4" tabindex="6" class="faq-item">
+      <div class="question">
+        <h5 class="label">Comment ça va toi sinon ? </h5>
+        <span class="plus-icon">+</span>
+
+      </div>
+      <div  class="reponse-block">
+        <span class="content">
+          <p class="reponse">Ça va bien merci i 2.</p>
+        </span>
+      </div>
+    </div>
+    <div id="5" tabindex="6" class="faq-item">
+      <div class="question">
+        <h5 class="label">Comment ça va toi sinon ? </h5>
+        <span class="plus-icon">+</span>
+
+      </div>
+      <div  class="reponse-block">
+        <span class="content">
+          <p class="reponse">Ça va bien merci i 2.</p>
+        </span>
+      </div>
+    </div>
   </div>
-  </main>
-  <footer id="footer">
-    <h3 class="phone-number">06-40-40-40-40</h3>
-    <h3>julien-mathé@gmail.com</h3>
+</section>
+  <footer id="contact">
+    <span class="phone-number">06-40-40-40-40</span>
+    <span>julien-mathé@gmail.com</span>
 
   </footer>
   <script src="index.js"></script>

@@ -18,7 +18,27 @@
   margin:0;
   font-family: 'din';
   font-size: 10px;
+  scroll-behavior: smooth;
+}
+.accessible-navbar{
+  position: relative;
+  width: 300px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid var(--black);
+  transform: translateY(-100%);
+  font-size: 2rem;
+  color: var(--black);
+  text-decoration: none;
+  font-family: 'din-bold';
+}
 
+.accessible-navbar:focus{
+  transform: translateY(0);
 }
 .bold{
   font-family: 'din-bold';
@@ -28,7 +48,7 @@ body{
   width: 100%;
   height: 100%;
   background-color: var(--bg-color);
-  padding:  0 30px
+  padding:  0 30px;
 }
 svg{
   height: fit-content;
@@ -37,7 +57,7 @@ svg{
 .section-home{
   position: relative;
   width: 100%;
-  min-height: 100dvh;
+  min-height: 95dvh;
 
 }
 .home-image{
@@ -67,6 +87,9 @@ svg{
   align-items: center;
   opacity: 0;
 }
+.navbar:focus {
+  opacity: 1;
+}
 .navbar.visible{
   opacity: 1;
 }
@@ -82,20 +105,39 @@ svg{
 
 }
 .item a{
+  position: relative;
   text-decoration: none;
   color: var(--black);
   font-size: 1.7rem;
   margin-left: 10px;
+}
+.item a:after{
+content: "";
+position: absolute;
+width: 100%;
+bottom: 0;
+left: 0;
+height: 1px;
+background-color: var(--black);
+transition: transform 0.3s ease-in-out;
+transform: scaleX(0);
+transform-origin: right;
+}
+.item a:hover:after{
+  transform: scaleX(1);
+  transform-origin: left;
+
+
 }
 .title-wrap{
   display: block;
   position: absolute;
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 80%;
   left: 50%;
   flex-direction: column;
-  top: 40%;
+  top: 35%;
   transform: translate(-50%,-50%);
   height: auto;
 }
@@ -125,9 +167,9 @@ svg{
 .cards-wrap{
   position: absolute;
   width: 100%;
-  top: -20px;
   display: flex;
   justify-content: space-evenly;
+  height: 100%;
 
 }
 @media screen and (max-width: 800px ) {
@@ -137,11 +179,13 @@ svg{
     }
 }
 .card{
+  display: block;
   position: relative;
   width: 45%;
   padding: 40px;
   min-height: 400px;
-  max-height: 80dvh;
+  height: 100%;
+  max-height: 80%;
   border-radius: 2rem;
   transition: border-radius 0.4s ease-in-out;
   background-color: var(--black);
@@ -153,32 +197,116 @@ svg{
     margin-top: 30px;
   }
 }
+.card:hover{
+  border-radius: 7rem;
+  cursor: default;
+}
 .card:first-child{
   background-color: transparent;
   border: 1px solid var(--black);
   padding: 0;
+display: block;
+  height: 100%;
   overflow: hidden;
 }
-.card-photo{
-  display: block;
+.photo-card{
   position: relative;
   width: 100%;
+  height: 100%;
+  transition: transform 0.4s linear;
   object-fit: cover;
-  object-position: center;
-  transition: transform 2s ease-in-out;
+  object-position: center center;
 }
-.card-photo:hover{
+.photo-card:hover{
+  transition: transform 3s linear;
   transform: scale(1.05);
+
 }
 .text{
-  font-size: 3rem;
+  font-size: 2.9rem;
   color:var(--bg-color);
   margin-bottom: 10px;
   line-height: 1.2;
 }
-.card:hover{
-  border-radius: 7rem;
-  cursor: default;
+
+.section-faq{
+  position: relative;
+  width: 100%;
+}
+.section-title{
+  font-size: 7rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.faq-wrap{
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  display: inline;
+
+}
+.faq-item{
+  padding:  20px 30px;
+  border: 1px solid var(--black);
+  width: 50%;
+  margin: auto;
+  position: relative;
+  border-bottom: 0;
+}
+.faq-item:first-child{
+
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.faq-item:last-child{
+  border: 1px solid var(--black);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.faq-item:hover{
+  cursor: pointer;
+}
+.question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plus-icon{
+  font-size: 4rem;
+  margin-left: 100px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.faq-item:hover .plus-icon{
+  opacity: 1;
+}
+.plus-icon.opened{
+  transform: rotate(45deg);
+}
+.question .label{
+  font-size: 2rem;
+  font-family: 'din-bold' ;
+}
+.reponse-block{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease, margin-top 0.3s ease;
+  border-top: 0;
+
+}
+.reponse-block.opened{
+  margin-top: 10px;
+  grid-template-rows: 1fr;
+}
+
+.reponse-block > * {
+  overflow: hidden;
+}
+.reponse{
+  font-size: 1.7rem;
 }
 .phone-number{
   font-size: 18rem;
