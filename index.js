@@ -60,6 +60,22 @@ const imgObserver = new IntersectionObserver(loadImg, {
 imgTargets.forEach(img => imgObserver.observe(img));
 }
 
+const openFaq = () => {
+  const overlay = document.querySelector('.overlay');
+  const faqLink = document.querySelector('.faq-link');
+  const close = document.querySelector('.close')
+  const faqPanel = document.querySelector('.section-faq')
+  faqLink.addEventListener('click', () => {
+    faqPanel.classList.add('open')
+    overlay.classList.add('open')
+  })
+  close.addEventListener('click', () => {
+    faqPanel.classList.remove('open')
+    overlay.classList.remove('open')
+  })
+}
+
+openFaq()
 lazyLoadImg()
 accessNavbar()
 navbarOnScroll()
