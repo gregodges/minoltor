@@ -177,10 +177,16 @@ const graphikLine = () => {
   const floating = document.querySelector('.floating')
   floating.style.transform = `translateX(${distance}px)`
 }
+if (window.matchMedia("(min-width: 700px)").matches) {
+    navbarOnScroll()
+} else {
 
+     const navbar = document.querySelector('.navbar');
+     navbar.classList.add('visible')
+}
 graphikLine()
 openFaq()
 lazyLoadImg()
 accessNavbar()
-navbarOnScroll()
+// navbarOnScroll()
 toggleFaq()
