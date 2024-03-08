@@ -10,6 +10,7 @@
   --bg-color: #e3d0c1;
   --black: rgb(30, 27, 27);
   --taille-texte: 16px;
+  --red-faded:rgba(242, 73, 21, 0.674);
 }
 *,
 *::before,
@@ -47,12 +48,17 @@ svg{
   position: relative;
   width: 100%;
   min-height: 95dvh;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
 }
+
 .home-image{
   position: absolute;
-  bottom: 50px;
-  right: 0;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 450px;
   height: auto;
 }
@@ -120,23 +126,23 @@ transform-origin: right;
 }
 .title-wrap{
   display: block;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   width: 80%;
-  left: 50%;
   flex-direction: column;
-  top: 35%;
-  transform: translate(-50%,-50%);
   height: auto;
+  margin-top: 150px;
 }
 .title{
   position: relative;
   width: 100%;
+  height: 100%;
 }
 .subtitle-wrap{
   position: relative;
   margin-top: 30px;
+
 }
 .subtitle{
   display: block;
@@ -144,34 +150,39 @@ transform-origin: right;
   text-transform: uppercase;
 }
 .floating{
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 15%;
-  transform: translateY(-50%);
+  width: 400px;
+  left: 0;
+  bottom: -10px;
+  height: 3px;
+  background-color: #000000;
 }
 .section-cards{
   position: relative;
-  min-height: 100dvh;
+  height: auto;
 }
 .cards-wrap{
-  position: absolute;
-  width: 95%;
+  width: 100%;
+  position: relative;
   display: flex;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: auto;
   justify-content: space-between;
-  height: 100%;
   max-width: 1300px;
 
 }
-@media screen and (max-width: 800px ) {
-  .section-cards{
+
+@media screen and (max-width: 950px ) {
+  .cards-wrap{
       align-items: center;
       flex-direction: column-reverse;
     }
 }
 .card{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 600px;
   padding: 40px;
@@ -179,11 +190,20 @@ transform-origin: right;
   border-radius: 2rem;
   transition: border-radius 0.2s ease-in-out;
   background-color: var(--black);
+  margin: 0 10px;
 }
 @media screen and (max-width: 800px ) {
   .card{
     width: 100%;
     margin-top: 30px;
+  }
+}
+@media screen and (max-width: 950px ) {
+  .card{
+    width: 100%;
+    margin-bottom: 20px;
+    height: fit-content;
+    /* max-height: 500px; */
   }
 }
 .card:hover{
@@ -196,6 +216,14 @@ transform-origin: right;
   padding: 0;
   display: block;
   overflow: hidden;
+
+}
+@media screen and (max-width: 950px ) {
+.card:first-child{
+  display: flex;
+  justify-content: center;
+  border: none;
+}
 }
 .photo-card{
   position: relative;
@@ -210,23 +238,44 @@ transform-origin: right;
   transform: scale(1.05);
 
 }
-.text{
-  font-size: 2.9rem;
-  color:var(--bg-color);
-  margin-bottom: 10px;
-  line-height: 1.2;
+@media screen and (max-width: 950px ) {
+  .photo-card{
+    width: 400px;
+  }
 }
 
+.text{
+  font-size: 2.3rem;
+  color:var(--bg-color);
+  margin-bottom: 10px;
+  line-height: 1.5;
+
+}
+@media screen and (max-width: 1355px ) {
+  .text {
+    font-size: 2.7rem;
+  }
+}
+@media screen and (max-width: 1250px ) {
+  .text {
+    font-size: 2.5rem;
+  }
+}
+  @media screen and (max-width: 1100px ) {
+    .text {
+      font-size: 2.3rem;
+    }
+}
 .bandeau{
     position: relative;
-    width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 150px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: 105vw;
     height: auto;
-    transform: rotate(-5deg) translateY(-110px);
+    overflow: hidden;
+    transform: rotate(-5deg) translateX(-5%);
   }
 
   .inner-bandeau{
@@ -236,6 +285,7 @@ transform-origin: right;
   display: flex;
   justify-content: start;
   margin-right: 10px;
+  z-index: 100;
   padding: 20px 0;
   transform: translateX(-10%);
 }
@@ -249,26 +299,104 @@ transform-origin: right;
   text-align: start;
   padding-right: 10px;
 }
+.section-tarifs{
+margin-bottom: 150px;
+}
+.tarif-wrap{
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+}
+.tarif-wrap .item{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid black;
+  padding: 15px;
+  padding-top: 50px;
+
+  height: 550px;
+  width: 420px;
+  font-size: 2rem;
+  border-top-right-radius: 420px;
+  border-top-left-radius:420px;
+
+}
+.tarif-wrap .item .circle{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  background-image: url('./assets/images/gravel.png');
+  color: var(--bg-color);
+}
+.tarif-wrap .item .circle::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 250px;
+  height: 100%;
+  background-color: var(--red-faded);
+  z-index: 1;
+}
+.item .price{
+  font-size: 8rem;
+  z-index: 100;
+  font-weight: 900;
+  font-family: 'din-bold' ;
+
+}
+.item-title{
+  font-size: 2.8rem;
+  font-family: 'din-bold' ;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.item .details{
+  list-style: none;
+  padding: 0;
+}
+.details .items{
+  /* text-align: center; */
+  font-size: 1.7rem;
+  font-family: 'din' ;
+  margin-bottom: 10px;
+}
+.details .items::before{
+  content: '-';
+  position: relative;
+  margin-right: 5px;
+}
 .section-contact{
   position: relative;
   display: flex;
   align-items: start;
   flex-direction: column;
   width: 100%;
-  transform: translateY(-50px);
-  padding: 0 30px;
+  margin-top: 150px;
 }
 .contact-wrap{
   display: flex ;
   align-items: center;
+  justify-content: space-between;
 }
 .contact-image-wrap{
-  margin:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 500px;
-  border-top-right-radius:100rem;
-  border-top-left-radius:100rem;
+  border-top-right-radius:56rem;
+  border-top-left-radius:35rem;
   overflow: hidden;
-  height: 500px;
+  /* height: 500px; */
   transition: border-radius 0.4s ease;
 }
 .contact-image-wrap:hover{
@@ -330,7 +458,7 @@ transform-origin: right;
 .inner-section-faq{
   box-shadow: -1px 3px 90px 0px #000000;
   width: 70%;
-  background-color: #b9a494;
+  background-color: #ddc3af;
   position: absolute;
   right: 0;top: 0px;
   padding: 110px 30px 0;
