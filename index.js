@@ -69,6 +69,11 @@ const openFaq = () => {
   const faqItem = faqPanel.querySelectorAll('.faq-item')
   const navBar = document.querySelector('.navbar')
 
+  overlay.addEventListener('click', ()=> {
+    console.log('toto');
+    faqPanel.classList.remove('open')
+    overlay.classList.remove('open')
+  })
   faqPanel.addEventListener('keydown', (event) => {
     if(event.keyCode === 9){
       const activeEl = document.activeElement
