@@ -55,8 +55,7 @@ body{
 }
 @media screen and (max-width: 700px) {
   .wrapper{
-    margin-left: 20px;
-    margin-right: 20px;
+    max-width: 95%;
   }
 }
 svg{
@@ -259,6 +258,13 @@ transform-origin: right;
   transition: border-radius 0.2s ease-in-out;
   background-color: var(--black);
 }
+@media screen and (max-width: 1200px ) {
+  .card{
+    width: 450px;
+    height: 500px;
+    margin-top: 30px;
+  }
+}
 @media screen and (max-width: 800px ) {
   .card{
     width: 100%;
@@ -324,12 +330,12 @@ transform-origin: right;
 }
 @media screen and (max-width: 1250px ) {
   .text {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
   @media screen and (max-width: 1100px ) {
     .text {
-      font-size: 2.3rem;
+      /* font-size: 2.3rem; */
     }
 }
 @media screen and (max-width: 900px ) {
@@ -382,10 +388,15 @@ transform-origin: right;
 .section-tarifs{
 margin-bottom: 150px;
 background-color: var(--black);
-padding: 40px 60px;
+padding: 90px 60px 60px;
 border-radius: 2rem;
 transition: border-radius 0.2s ease-in-out;
 
+}
+@media screen and (max-width:700px) {
+  .section-tarifs{
+    padding: 40px 25px;
+  }
 }
 .section-tarifs:hover{
   border-radius: 7rem;
@@ -397,6 +408,14 @@ transition: border-radius 0.2s ease-in-out;
   align-items: start;
   justify-content: space-between;
   gap: 200px;
+
+}
+@media screen and (max-width:1200px) {
+  .tarifs-wrap{
+
+    flex-direction: column;
+    gap: 60px;
+  }
 }
 .tarif{
   position: relative;
@@ -420,6 +439,19 @@ transition: border-radius 0.2s ease-in-out;
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width:700px) {
+  .tarif .list .list-item{
+    justify-content: start;
+
+  }
+}
+@media screen and (max-width:400px) {
+  .tarif .list .list-item{
+    flex-direction: column;
+    align-items: start;
+
+  }
+}
 .tarif .list .list-item:before {
   content: '';
   position: absolute;
@@ -438,13 +470,22 @@ transition: border-radius 0.2s ease-in-out;
   color: var(--bg-color);
 
 }
+@media screen and (max-width:700px) {
+  .tarif .list .list-item, .list-item span {
+    font-size: 1.7rem;
+  }
+}
 .tarif .list .list-item .price{
   padding-left: 10px;
   z-index: 1;
   background-color: var(--black);
   cursor: default;
   font-size: 2.2rem;
-
+}
+@media screen and (max-width:700px) {
+  .tarif .list .list-item .price {
+    font-size: 2rem;
+  }
 }
 .tarif .list .list-item .service{
   position: relative;
@@ -453,7 +494,11 @@ transition: border-radius 0.2s ease-in-out;
   background-color: var(--black);
   cursor: default;
 }
-
+@media screen and (max-width:700px) {
+  .tarif .list .list-item .service{
+    max-width: 260px;
+  }
+}
 .tarif .list .list-item .line{
 content: '';
 width: 0%;
@@ -469,6 +514,12 @@ transition: width 0.6s ease;
 .tarif .list .list-item:hover .line{
   width: 100%;
 }
+@media screen and (max-width:700px) {
+
+  .tarif .list .list-item .line{
+    display: none !important;
+  }
+}
 .tarif .list .sub span{
   padding-left: 40px;
   font-size: 1.6rem;
@@ -476,17 +527,45 @@ transition: width 0.6s ease;
 
 }
 .tarif .list .sub .price{
+  position: relative;
   padding-left: 20px;
   font-size: 1.6rem;
   color: var(--yellow) !important;
-
 }
-.tarif .list .list-item.sub:before{
+@media screen and (max-width:700px) {
+  .tarif .list .sub {
+    font-size: 1.4rem;
+  }
+}
+.tarif .list .list-item.sub{
+  position: relative;
+}
+.tarif .list .list-item.sub::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
   left: 15px;
   border-radius: 8px;
   width: 8px;
   height: 8px;
+  z-index: 10;
   background-color: var(--yellow);
+  font-size: 2rem;
+}
+@media screen and (max-width:700px) {
+  .tarif .list .list-item.sub::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    left: 15px;
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--yellow);
+    font-size: 2rem;
+  }
 }
 .section-contact{
   position: relative;
