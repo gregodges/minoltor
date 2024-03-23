@@ -1,3 +1,70 @@
+const tarifs= [{
+  Boitiers: [
+    {
+      type: 'normal',
+      name :'Nettoyage',
+      price: '30'
+    },
+    {
+      type: 'normal',
+      name :'Réglage du télémètre',
+      price: '30'
+    },
+    { type: 'normal',
+      name :'Contrôle de vitesse et de cellule',
+      price: '30'
+    },
+    {
+      type: 'sub',
+      name :'Si ajustement vitesse & cellule nécéssaire',
+      price: '60'
+    },
+    {
+      type:'range',
+      name :'Changement des joints d\'étenchéité',
+      price: '45 - 60'
+    },
+    {
+      type:'range',
+      name :'Révision compléte',
+      price: '130 -  180'
+    },
+  ]},
+  {
+
+
+  Objectifs: [
+    {
+      type: 'range',
+      name :'Nettoyage',
+      price: '30 - 60'
+    },
+    {
+      type: 'normal',
+      name :'Réglage du mise au point',
+      price: '30'
+    },
+    { type: 'range',
+      name :'Nettoyage des lamelles gommées',
+      price: '40 - 60'
+    },
+    {
+      type: 'range',
+      name :'Élimination des champignons',
+      price: '45 - 70'
+    },
+    {
+      type:'range',
+      name :'Révision',
+      price: '80 - 130'
+    },
+    {
+      type:'range',
+      name :'Révision compléte',
+      price: '130 -  180'
+    },
+  ]
+} ];
 
 const toggleFaq = () => {
  const faqItems = document.querySelectorAll('.faq-item');
@@ -185,10 +252,46 @@ const graphikLine = () => {
 if (window.matchMedia("(min-width: 700px)").matches) {
     navbarOnScroll()
 } else {
-
      const navbar = document.querySelector('.navbar');
      navbar.classList.add('visible')
 }
+
+const vFor = (array) => {
+  const tarifSection = document.querySelector('.tarifs-wrap')
+  array.forEach(category => {
+    const categoryName = Object.keys(category)[0];
+    const tarif = document.createElement('div')
+    tarif.classList.add('tarif')
+    const ul = document.createElement('ul')
+    ul.classList.add('list')
+    const title = document.createElement('h3');
+    title.classList.add('title')
+
+    title.textContent = categoryName;
+    tarif.appendChild(title);
+    tarif.appendChild(ul)
+    tarifSection.appendChild(tarif)
+    category[categoryName].forEach(service => {
+        const li = document.createElement('li')
+        li.classList.add('list-item')
+        li.classList.add(`${service.type}`)
+        const name = document.createElement('span')
+        name.classList.add('service')
+        const price = document.createElement('span')
+        price.classList.add('price')
+        price.classList.add('bold')
+        const line = document.createElement('span')
+        line.classList.add('line')
+        name.textContent = service.name
+        price.textContent = `${service.price} €`
+        li.appendChild(name)
+        li.appendChild(price)
+        li.appendChild(line)
+        ul.appendChild(li)
+    });
+});
+}
+vFor(tarifs)
 graphikLine()
 openFaq()
 lazyLoadImg()

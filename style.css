@@ -6,11 +6,16 @@
   font-family: 'din-bold';
   src: url('./assets/font/D-DIN-Bold.otf');
 }
+@font-face {
+  font-family: 'gilton';
+  src: url('./assets/font/GILTON.otf');
+}
 :root {
   --bg-color: #e3d0c1;
   --black: rgb(30, 27, 27);
   --taille-texte: 16px;
   --red-faded:rgba(242, 73, 21, 0.674);
+  --yellow: #EAD74F;
 }
 *,
 *::before,
@@ -52,20 +57,27 @@ svg{
 .section-home{
   position: relative;
   width: 100%;
-  min-height: 95dvh;
+  height: 100svh;
+  min-height: 600px;
+  max-height: 800px;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
   margin-bottom: 100px;
+  @media screen and (max-width: 1000px) {
+      margin-bottom: 0;
+  }
 }
 
 .home-image{
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: 450px;
   height: auto;
+  margin-top: auto;
+  transform: translateY(-15%);
+  align-self: center;
+  margin-bottom: auto;
 }
 @media screen and (max-width: 1100px) {
   .home-image{
@@ -216,7 +228,6 @@ transform-origin: right;
   width: 100%;
   position: relative;
   display: flex;
-  margin: auto;
   justify-content: space-between;
   max-width: 1300px;
 
@@ -240,7 +251,6 @@ transform-origin: right;
   border-radius: 2rem;
   transition: border-radius 0.2s ease-in-out;
   background-color: var(--black);
-  margin: 0 10px;
 }
 @media screen and (max-width: 800px ) {
   .card{
@@ -253,7 +263,6 @@ transform-origin: right;
     width: 100%;
     margin-bottom: 20px;
     height: fit-content;
-    /* max-height: 500px; */
   }
 }
 .card:hover{
@@ -316,13 +325,27 @@ transform-origin: right;
       font-size: 2.3rem;
     }
 }
+@media screen and (max-width: 900px ) {
+  .text {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 700px ) {
+  .text {
+    font-size: 1.6rem;
+  }
+}
+.bandeau-wrap{
+  position: relative;
+  width: 100%;
+}
 .bandeau{
     position: relative;
     margin-bottom: 150px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 105vw;
+    width: 100vw;
     height: auto;
     overflow: hidden;
     transform: rotate(-5deg) translateX(-5%);
@@ -351,90 +374,113 @@ transform-origin: right;
 }
 .section-tarifs{
 margin-bottom: 150px;
+background-color: var(--black);
+padding: 40px 60px;
+max-width: 1300px;
+border-radius: 2rem;
+transition: border-radius 0.2s ease-in-out;
+
 }
-.tarif-wrap{
+.section-tarifs:hover{
+  border-radius: 7rem;
+}
+
+.tarifs-wrap{
   width: 100%;
   display: flex;
   align-items: start;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 200px;
 }
-@media screen and (max-width: 1000px) {
-  .tarif-wrap{
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.tarif-wrap .item{
-  display: flex;
+.tarif{
   position: relative;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  border: 1px solid black;
-  padding: 15px;
-  padding-top: 50px;
+  width: 100%;
 
-  height: 550px;
-  width: 420px;
-  font-size: 2rem;
-  border-top-right-radius: 420px;
-  border-top-left-radius:420px;
 }
-@media screen and (max-width: 1100px) {
-  .tarif-wrap .item{
-      margin-bottom: 30px;
-      width: 100%;
-  }
+.tarif .title{
+  font-size: 3rem;
+  font-family: 'gilton';
+  padding-bottom: 30px;
+  color: var(--yellow);
 }
-.tarif-wrap .item .circle{
+.tarif .list{
+  padding-left: 30px;
+  list-style: none;
+}
+.tarif .list .list-item {
+  padding-bottom: 10px;
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
-  background-image: url('./assets/images/gravel.png');
-  color: var(--bg-color);
 }
-.tarif-wrap .item .circle::before{
+.tarif .list .list-item:before {
   content: '';
   position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 250px;
-  height: 100%;
-  background-color: var(--red-faded);
-  z-index: 1;
+  top: 50%;
+  left: -25px;
+  border-radius: 12px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--bg-color);
+  transform: translateY(-100%);
 }
-.item .price{
-  font-size: 8rem;
-  z-index: 100;
-  font-weight: 900;
-  font-family: 'din-bold' ;
+
+.tarif .list .list-item, .list-item span {
+  font-size: 2rem;
+  /* line-height: 1.5; */
+  color: var(--bg-color);
 
 }
-.item-title{
-  font-size: 2.8rem;
-  font-family: 'din-bold' ;
-  margin-bottom: 20px;
-  margin-top: 20px;
+.tarif .list .list-item .price{
+  padding-left: 10px;
+  z-index: 1;
+  background-color: var(--black);
+  cursor: default;
+  font-size: 2.2rem;
+
 }
-.item .details{
-  list-style: none;
-  padding: 0;
-}
-.details .items{
-  /* text-align: center; */
-  font-size: 1.7rem;
-  font-family: 'din' ;
-  margin-bottom: 10px;
-}
-.details .items::before{
-  content: '-';
+.tarif .list .list-item .service{
   position: relative;
-  margin-right: 5px;
+  z-index: 1;
+  padding-right: 10px;
+  background-color: var(--black);
+  cursor: default;
+}
+
+.tarif .list .list-item .line{
+content: '';
+width: 0%;
+position: absolute;
+top: 50%;
+z-index: 0;
+left: 0%;
+transform: translateY(-80%);
+height: 1px;
+background-color: var(--bg-color);
+transition: width 0.6s ease;
+}
+.tarif .list .list-item:hover .line{
+  width: 100%;
+}
+.tarif .list .sub span{
+  padding-left: 40px;
+  font-size: 1.6rem;
+  color: var(--yellow) !important;
+
+}
+.tarif .list .sub .price{
+  padding-left: 20px;
+  font-size: 1.6rem;
+  color: var(--yellow) !important;
+
+}
+.tarif .list .list-item.sub:before{
+  left: 15px;
+  border-radius: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--yellow);
 }
 .section-contact{
   position: relative;
@@ -468,6 +514,11 @@ margin-bottom: 150px;
 @media screen and (max-width: 1000px) {
   .contact-image-wrap{
     width: 300px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact-image-wrap{
+    width: 100%;
   }
 }
 .contact-image-wrap:hover{
@@ -582,10 +633,14 @@ margin-bottom: 150px;
   font-size: 5rem;
   text-align: center;
   display: block;
+  font-family: 'gilton';
   margin: auto;
   text-transform: uppercase;
   margin-bottom: 40px;
 
+}
+.section-title.reverse{
+  color: var(--bg-color)
 }
 .faq-wrap{
   position: block;
