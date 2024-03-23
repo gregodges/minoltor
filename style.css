@@ -42,12 +42,21 @@ body{
   width: 100%;
   height: 100%;
   background-color: var(--bg-color);
-  padding:  0 50px;
   overflow-x: hidden;
 }
+
+.wrapper{
+  width: 100%;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 150px;
+
+}
 @media screen and (max-width: 700px) {
-  body{
-    padding: 0 15px;
+  .wrapper{
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 svg{
@@ -229,8 +238,6 @@ transform-origin: right;
   position: relative;
   display: flex;
   justify-content: space-between;
-  max-width: 1300px;
-
 }
 
 @media screen and (max-width: 950px ) {
@@ -376,7 +383,6 @@ transform-origin: right;
 margin-bottom: 150px;
 background-color: var(--black);
 padding: 40px 60px;
-max-width: 1300px;
 border-radius: 2rem;
 transition: border-radius 0.2s ease-in-out;
 
