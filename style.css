@@ -103,7 +103,7 @@ svg{
   position: fixed;
   top: 40px;
   width: 90%;
-  z-index: 10;
+  z-index: 100;
   left: 50%;
   background-color: var(--bg-color);
   transform: translateX(-50%);
@@ -340,7 +340,14 @@ transform-origin: right;
   .card:first-child{
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    margin-bottom: 0;
+  }
+  .inside-2{
+    margin-bottom: 0;
+  }
+  .inside-1{
+    margin-top: 0;
   }
   }
 .image-wrap{
@@ -411,6 +418,14 @@ transform-origin: right;
   width: 100%;
   margin-top: 75px;
   margin-bottom: 75px;
+  height: 300px;
+}
+@media screen and (min-width: 1700px ) {
+  .bandeau-wrap{
+    opacity: 0;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
 }
 @media screen and (max-width: 700px ) {
   .bandeau-wrap{
@@ -423,10 +438,11 @@ transform-origin: right;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: 110%;
     height: auto;
     overflow: hidden;
-    /* transform: rotate(-5deg) translateX(-2%); */
+    transform: rotate(-5deg);
+    margin-left: -5px;
   }
 
   .inner-bandeau{
