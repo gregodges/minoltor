@@ -1,70 +1,3 @@
-const tarifs= [{
-  Boitiers: [
-    {
-      type: 'normal',
-      name :'Nettoyage',
-      price: '30'
-    },
-    {
-      type: 'normal',
-      name :'Réglage du télémètre',
-      price: '30'
-    },
-    { type: 'normal',
-      name :'Contrôle de vitesse et de cellule',
-      price: '30'
-    },
-    {
-      type: 'sub',
-      name :'Si ajustement vitesse & cellule nécéssaire',
-      price: '60'
-    },
-    {
-      type:'range',
-      name :'Changement des joints d\'étenchéité',
-      price: '45 - 60'
-    },
-    {
-      type:'range',
-      name :'Révision compléte',
-      price: '130 -  180'
-    },
-  ]},
-  {
-
-
-  Objectifs: [
-    {
-      type: 'range',
-      name :'Nettoyage',
-      price: '30 - 60'
-    },
-    {
-      type: 'normal',
-      name :'Réglage du mise au point',
-      price: '30'
-    },
-    { type: 'range',
-      name :'Nettoyage des lamelles gommées',
-      price: '40 - 60'
-    },
-    {
-      type: 'range',
-      name :'Élimination des champignons',
-      price: '45 - 70'
-    },
-    {
-      type:'range',
-      name :'Révision',
-      price: '80 - 130'
-    },
-    {
-      type:'range',
-      name :'Révision compléte',
-      price: '130 -  180'
-    },
-  ]
-} ];
 
 const toggleFaq = () => {
  const faqItems = document.querySelectorAll('.faq-item');
@@ -249,52 +182,55 @@ const graphikLine = () => {
   const floating = document.querySelector('.floating')
   floating.style.transform = `translateX(${distance}px)`
 }
-if (window.matchMedia("(min-width: 700px)").matches) {
+
+const handleNavBar = () => {
+  if (window.matchMedia("(min-width: 700px)").matches) {
     navbarOnScroll()
-} else {
-     const navbar = document.querySelector('.navbar');
-     navbar.classList.add('visible')
+  } else {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.add('visible')
+  }
 }
 
-const vFor = (array) => {
-  const tarifSection = document.querySelector('.tarifs-wrap')
-  array.forEach(category => {
-    const categoryName = Object.keys(category)[0];
-    const tarif = document.createElement('div')
-    tarif.classList.add('tarif')
-    const ul = document.createElement('ul')
-    ul.classList.add('list')
-    const title = document.createElement('h3');
-    title.classList.add('title')
+const animIntro = () => {
+  setTimeout(() => {
+  const title = document.querySelector('.title');
+  const paths = title.querySelectorAll('path');
+  const subTitle =  document.querySelector('.subtitle')
+  const floating =  document.querySelector('.floating')
+    const homeImage = document.querySelector('.home-image')
+  paths.forEach((path, index) => {
+    path.style.transform = 'rotate(20deg) translateY(100px)'
+    path.style.animation = `textReveal 0.6s forwards`;
+    path.style.animationTimingFunction = 'cubic-bezier(.33,.55,.17,.94)'
+    path.style.animationDelay = `${index * 0.03}s`;
+  });
 
-    title.textContent = categoryName;
-    tarif.appendChild(title);
-    tarif.appendChild(ul)
-    tarifSection.appendChild(tarif)
-    category[categoryName].forEach(service => {
-        const li = document.createElement('li')
-        li.classList.add('list-item')
-        li.classList.add(`${service.type}`)
-        const name = document.createElement('span')
-        name.classList.add('service')
-        const price = document.createElement('span')
-        price.classList.add('price')
-        price.classList.add('bold')
-        const line = document.createElement('span')
-        line.classList.add('line')
-        name.textContent = service.name
-        price.textContent = `${service.price} €`
-        li.appendChild(name)
-        li.appendChild(price)
-        li.appendChild(line)
-        ul.appendChild(li)
-    });
-});
+  subTitle.style.animation = 'subtitleReveal 0.7s forwards'
+  subTitle.style.animationDelay = `${paths.length * 0.08}s`
+  if(window.matchMedia("(min-width: 1101px)").matches){
+    floating.style.animation = 'floatingLine 0.7s forwards'
+    floating.style.animationDelay = `${paths.length * 0.08}s`
+  }
+  if (window.matchMedia("(max-width: 1100px)").matches) {
+  floating.style.animation = 'floatingLineDown1100 0.7s forwards'
+  floating.style.animationDelay = `${paths.length * 0.08}s`
+  }
+  if (window.matchMedia("(max-width: 700px)").matches) {
+    floating.style.animation = 'floatingLineDown700 0.7s forwards'
+    floating.style.animationDelay = `${paths.length * 0.08}s`
+    }
+  homeImage.style.animation = 'homeImage 0.7s forwards'
+  homeImage.style.animationDelay = `${paths.length * 0.08}s`
+
+}, 1000);
+
 }
-vFor(tarifs)
+
+animIntro()
 graphikLine()
 openFaq()
 lazyLoadImg()
 accessNavbar()
-// navbarOnScroll()
+handleNavBar()
 toggleFaq()
