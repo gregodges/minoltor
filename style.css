@@ -229,6 +229,7 @@ transform-origin: right;
 
 .section-cards{
   position: relative;
+  margin-bottom: 0;
   height: auto;
 }
 .cards-wrap{
@@ -408,17 +409,24 @@ transform-origin: right;
 .bandeau-wrap{
   position: relative;
   width: 100%;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+@media screen and (max-width: 700px ) {
+  .bandeau-wrap{
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
 }
 .bandeau{
     position: relative;
-    margin-bottom: 150px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100vw;
+    width: 105vw;
     height: auto;
     overflow: hidden;
-    transform: rotate(-5deg) translateX(-5%);
+    transform: rotate(-5deg) translateX(-2%);
   }
 
   .inner-bandeau{
