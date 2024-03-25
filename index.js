@@ -223,7 +223,7 @@ const animIntro = () => {
   homeImage.style.animation = 'homeImage 0.7s forwards'
   homeImage.style.animationDelay = `${paths.length * 0.08}s`
 
-}, 1000);
+}, 600);
 
 }
 
