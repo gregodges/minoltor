@@ -210,6 +210,10 @@ const toggleFaq = () => {
      floating.style.animation = 'floatingLine 0.7s forwards'
      floating.style.animationDelay = `${paths.length * 0.08}s`
    }
+   if(window.matchMedia("(min-width: 2000px)").matches){
+    floating.style.animation = 'floatingLineUp2000 0.7s forwards'
+    floating.style.animationDelay = `${paths.length * 0.08}s`
+  }
    if (window.matchMedia("(max-width: 1100px)").matches) {
    floating.style.animation = 'floatingLineDown1100 0.7s forwards'
    floating.style.animationDelay = `${paths.length * 0.08}s`
@@ -230,9 +234,11 @@ const toggleFaq = () => {
           event.preventDefault();
           const targetId = this.getAttribute("href").substring(1);
           const targetSection = document.getElementById(targetId);
+          const toBlock = window.matchMedia("(max-width: 700px)").matches ? 'start' : 'center'
+          console.log(toBlock)
           targetSection.scrollIntoView({
               behavior: "smooth",
-              block: "start"
+              block: toBlock
           });
       });
   });

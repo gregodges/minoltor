@@ -1029,6 +1029,16 @@ transition: width 0.6s ease;
     width: 400px;
   }
 }
+@keyframes floatingLineUp2000 {
+  0%{
+    opacity: 0;
+    width: 0;
+  }
+  100%{
+    opacity: 1;
+    width: 40vw;
+  }
+}
 @keyframes floatingLineDown1100 {
   0%{
     opacity: 0;
