@@ -776,12 +776,17 @@ transition: width 0.6s ease;
   width: 100%;
   display: block;
 }
-
+.phone-link{
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
 .phone-number{
   width: 100%;
   color: var(--black);
+  height: 100%;
   margin-bottom: 30px;
-  max-width: 900px;
 }
 .email{
   /* font-size: 7rem; */
