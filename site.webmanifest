@@ -17,7 +17,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#e3d0c1",
-  "theme_color": "#007bff",
+  "theme_color": "#e3d0c1",
   "orientation": "portrait",
   "lang": "fr",
   "related_applications": [
