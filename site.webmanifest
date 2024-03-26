@@ -4,13 +4,13 @@
   "description": "Minoltor c'est l'atelier de réparation et d'entretien d'appareils photos argentiques à Nantes et dans toute la France",
   "icons": [
     {
-      "src": "/favicon-192x192.png",
-      "sizes": "192x192",
+      "src": "assets/icons/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/favicon-512x512.png",
-      "sizes": "512x512",
+      "src": "assets/icons/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ],
@@ -26,12 +26,5 @@
     }
   ],
   "prefer_related_applications": false,
-  "scope": "/",
-  "screenshots": [
-    {
-      "src": "/screenshot1.png",
-      "sizes": "1280x720",
-      "type": "image/png"
-    }
-  ]
+  "scope": "/"
 }
