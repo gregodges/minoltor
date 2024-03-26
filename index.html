@@ -116,9 +116,13 @@
             </div>
 
             <div class="image-wrap">
-              <img src="assets/images/camera-1.jpg"
-                srcset="assets/images/camera-1@2x.jpg 2x" class="photo-card"
-                alt="Réparation d'un appareil photo par Julien">
+              <img
+                src="assets/images/camera-1.jpg"
+                loading="lazy"
+                srcset="assets/images/camera-1@2x.jpg 2x"
+                class="photo-card"
+                alt="Réparation d'un appareil photo par Julien"
+                >
             </div>
 
             <div class="pill">
@@ -237,7 +241,7 @@
       <div class="contact-wrap">
         <a tabindex aria-label="Appeler Minoltor" class="phone-link"
           href="tel:+33646430317">
-          <img class="phone-number"
+          <img loading="lazy" class="phone-number"
             src="assets/icons/minoltor-numero_telephone.svg"
             alt="Numéro de téléphone de Minoltor">
         </a>
@@ -315,6 +319,6 @@
         </div>
       </div>
     </section>
-    <script src="./source/index.min.js"></script>
+    <script src="./source/index.min.js" async></script>
   </body>
 </html>
