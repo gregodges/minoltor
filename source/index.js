@@ -220,10 +220,24 @@ const toggleFaq = () => {
      }
    homeImage.style.animation = 'homeImage 0.7s forwards'
    homeImage.style.animationDelay = `${paths.length * 0.08}s`
-
-
  }
+ const navigation = () => {
+  const links = document.querySelectorAll('a[href^="#"]');
 
+  links.forEach(link => {
+
+      link.addEventListener("click", function(event) {
+          event.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetSection = document.getElementById(targetId);
+          targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+          });
+      });
+  });
+ }
+ navigation()
  animIntro()
  graphikLine()
  openFaq()
