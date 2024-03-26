@@ -192,7 +192,6 @@ const toggleFaq = () => {
  }
 
  const animIntro = () => {
-   setTimeout(() => {
    const title = document.querySelector('.title');
    const paths = title.querySelectorAll('path');
    const subTitle =  document.querySelector('.subtitle')
@@ -222,7 +221,6 @@ const toggleFaq = () => {
    homeImage.style.animation = 'homeImage 0.7s forwards'
    homeImage.style.animationDelay = `${paths.length * 0.08}s`
 
- }, 600);
 
  }
 
