@@ -76,7 +76,7 @@ const toggleFaq = () => {
    faqPanel.addEventListener('keydown', (event) => {
      if(event.keyCode === 9){
        const activeEl = document.activeElement
-       if(activeEl.tabIndex === 6){
+       if(activeEl.tabIndex === faqItem.length + 1){
          faqPanel.classList.remove('open')
        overlay.classList.remove('open')
        for(let i = 0; i< faqItem.length; i++){
