@@ -20,11 +20,6 @@
   "theme_color": "#e3d0c1",
   "orientation": "portrait",
   "lang": "fr",
-  "related_applications": [
-    {
-      "platform": "web"
-    }
-  ],
   "prefer_related_applications": false,
   "scope": "/"
 }

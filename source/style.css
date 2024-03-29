@@ -352,7 +352,7 @@ z-index: -1;
   grid-column: 1 / 5;
   background-color: var(--black);
   margin-top: 5px;
-  background-image: url('./assets/images/gravel.png');
+  background-image: url('../assets/images/gravel.png');
   background-blend-mode: multiply;
 
   border-radius: 2rem;
@@ -363,7 +363,7 @@ z-index: -1;
   border-radius: 2rem;
   grid-row: 2;
   background-color: var(--primary-color);
-  background-image: url('./assets/images/gravel.png');
+  background-image: url('../assets/images/gravel.png');
   background-blend-mode: multiply;
 
   margin-bottom: 5px;
