@@ -17,6 +17,7 @@
     <meta property="twitter:description" content="Minoltor, est l'atelier de réparation et d'entretien de matériel argentique de Julien Mathé, basé à Nantes. Après des années à arpenter le monde fascinant des appareils photos argentiques, en chinant les perles rares et les manuels anciens, entrer dans le dédale des mécanismes s'est imposé comme une évidence.">
     <meta property="twitter:image" content="https://minoltor.fr/assets/images/share/share.png">
     <link rel="stylesheet" href="./source/style.min.css">
+    <!-- <link rel="stylesheet" href="./source/style.css"> -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://minoltor.fr/assets/icons/apple-touch-icon.png">
     <link rel="icon" sizes="192x192" href="https://minoltor.fr/assets/icons/android-chrome-192x192.png">
     <link rel="icon" sizes="512x512" href="https://minoltor.fr/assets/icons/android-chrome-512x512.png">
@@ -103,15 +104,18 @@
               <div class="inside-1"></div>
               <div class="inside-2"></div>
             </div>
-
             <div class="image-wrap">
+              <picture>
+              <source srcset="assets/images/camera-1.web" type="webp"  />
+              <source srcset="assets/images/camera-1@2x.web 2x" type="webp" media="(min-width: 600px)" />
+              <source srcset="assets/images/camera-1@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
               <img
-                src="assets/images/camera-1.jpg"
-                loading="lazy"
-                srcset="assets/images/camera-1@2x.jpg 2x"
-                class="photo-card"
-                alt="Réparation d'un appareil photo par Julien"
-                >
+              src="assets/images/camera-1.jpg"
+              loading="lazy"
+              class="photo-card"
+              alt="Appareil photo"
+              >
+            </picture>
             </div>
 
             <div class="pill">
@@ -225,6 +229,133 @@
       </div>
     </section>
 
+    <section tabindex class="section-photos wrapper">
+      <h2 class="section-title reverse">Nos dernières réparations</h2>
+      <div class="grid-wrap">
+
+        <div class="image-wrap">
+          <picture>
+            <source srcset="assets/images/fix-1.webp" type="webp" />
+            <source srcset="assets/images/fix-1@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+            <source srcset="assets/images/fix-1@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+            <img
+            src="assets/images/fix-1.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+            >
+          </picture>
+        </div>
+
+        <div class="image-wrap big">
+        <picture>
+          <source srcset="assets/images/fix-2.webp" type="webp" />
+          <source srcset="assets/images/fix-2@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+          <source srcset="assets/images/fix-2@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+          <img
+            src="assets/images/fix-2.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+          >
+        </picture>
+      </div>
+
+      <div class="image-wrap">
+        <picture>
+          <source srcset="assets/images/fix-3.webp" type="webp" />
+          <source srcset="assets/images/fix-3@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+          <source srcset="assets/images/fix-3@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+          <img
+            src="assets/images/fix-3.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+          >
+        </picture>
+      </div>
+
+      <div class="image-wrap">
+        <picture>
+          <source srcset="assets/images/fix-4.webp" type="webp" />
+          <source srcset="assets/images/fix-4@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+          <source srcset="assets/images/fix-4@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+          <img
+            src="assets/images/fix-4.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+          >
+        </picture>
+      </div>
+
+      <div class="image-wrap big">
+        <picture>
+          <source srcset="assets/images/fix-5.webp" type="webp" />
+          <source srcset="assets/images/fix-5@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+          <source srcset="assets/images/fix-5@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+          <img
+            src="assets/images/fix-5.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+          >
+        </picture>
+      </div>
+
+      <div class="image-wrap">
+        <picture>
+          <source srcset="assets/images/fix-6.webp" type="webp" />
+          <source srcset="assets/images/fix-6@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+          <source srcset="assets/images/fix-6@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+          <img
+            src="assets/images/fix-6.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+          >
+        </picture>
+      </div>
+
+      <div class="image-wrap">
+        <picture>
+          <source srcset="assets/images/fix-7.webp" type="webp" />
+          <source srcset="assets/images/fix-7@2x.webp 2x" type="webp" media="(min-width: 600px)" />
+          <source srcset="assets/images/fix-7@2x.jpg 2x" type="jpg" media="(min-width: 600px)" />
+          <img
+            src="assets/images/fix-7.jpg"
+            loading="lazy"
+            class="photo"
+            alt="Réparation d'un appareil photo par Julien"
+          >
+        </picture>
+      </div>
+      <div class="icon-wrap">
+          <svg class='asset-1' width="196" height="197" viewBox="0 0 196 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path  d="M180.667 85C197.667 74.6667 194.333 63.3333 174.333 64C188 49.3333 182 39.6667 163 45.3333C172.667 27.6667 164 19.6667 147 30.3333C151.667 11 141.333 5.33332 127.667 20C127.333 -0.333345 115.667 -2.66668 106 15.3333C100.333 -4.33335 88.3334 -4.33334 84 15.6667C73.3334 -1.33334 62.3334 1.99999 63 22C48.3334 8.33332 38.6667 14.3333 44.3334 33.6667C26.6667 24.3333 18.6667 32.6667 29.3334 49.6667C10 45 4.33335 55.3333 19 69C-0.666648 69.6667 -3.66665 80.6667 13.6667 90C-4.99998 95.6667 -4.33331 107.333 15 111.667C-1.99998 122 1.33335 133.333 21.3334 132.667C7.66669 147.333 13.6667 157 32.6667 151.333C23 169 31.6667 177 48.6667 166.333C44 185.667 54.3334 191.333 68 176.667C68.3334 197 80 199.333 89.6667 181.333C95.3334 201 107.333 201 111.667 181C122.333 198 133.333 194.667 132.667 174.667C147.333 188.333 157 182.333 151.333 163C169 172.333 177 164 166.333 147C185.667 151.667 191.333 141.333 176.667 127.667C196.333 127 199.333 116 182 106.667C200.667 100.667 200 89.3333 180.667 85Z" fill="#e3d0c1"/>
+          </svg>
+
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_26_914)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M200 98.523C196.396 99.5061 192.677 100.003 188.941 100H144.233C121.117 100 102.378 118.739 102.378 141.854V191.319C102.378 194.295 102.067 197.199 101.477 200C100.494 196.396 99.997 192.677 100 188.941V144.233C100 121.117 81.261 102.378 58.146 102.378H8.68C5.76326 102.379 2.85429 102.077 0 101.477C3.6043 100.494 7.32396 99.9969 11.06 100H55.767C78.883 100 97.622 81.261 97.622 58.146V8.67999C97.622 5.70399 97.932 2.79999 98.523 -0.00100708C99.5063 3.60365 100.003 7.32363 100 11.06V55.767C100 78.883 118.739 97.622 141.855 97.622H191.319C194.295 97.622 197.199 97.932 200 98.523Z" fill="#e3d0c1"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_26_914">
+            <rect width="200" height="200" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M89.932 6.129C94.157 -2.043 105.843 -2.043 110.068 6.129L136.973 58.164C138.051 60.2497 139.75 61.949 141.836 63.027L193.871 89.932C202.043 94.157 202.043 105.843 193.871 110.068L141.836 136.973C139.75 138.051 138.051 139.75 136.973 141.836L110.068 193.871C105.843 202.043 94.157 202.043 89.932 193.871L63.027 141.836C61.949 139.75 60.2497 138.051 58.164 136.973L6.12998 110.068C-2.04202 105.843 -2.04202 94.157 6.12998 89.932L58.165 63.027C60.2505 61.9487 61.9497 60.2495 63.028 58.164L89.932 6.13V6.129Z" fill="#e3d0c1"/>
+            </svg>
+
+
+
+      </div>
+      </div>
+    </section>
+
     <section class="section-contact wrapper" id="contact">
       <h2 class="section-title">Contact</h2>
       <div class="contact-wrap">
@@ -234,10 +365,8 @@
             src="assets/icons/minoltor-numero_telephone.svg"
             alt="Numéro de téléphone de Minoltor">
         </a>
-
         <a tabindex class="email bold link"
           href="mailto:minoltor@prontonmail.com"> minoltor@protonmail.com</a>
-
       </div>
     </section>
 
@@ -252,7 +381,6 @@
               <span class="label">Faites vous des réparations sur des appareils
                 numérique ?</span>
               <span class="plus-icon">+</span>
-
             </div>
             <div class="reponse-block">
               <span class="content">
